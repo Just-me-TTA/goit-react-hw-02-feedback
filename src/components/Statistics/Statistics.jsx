@@ -1,25 +1,19 @@
-import {
-  StatisticsWrap,
-  Title,
-  StatList,
-  StatItem,
-  Percentage,
-} from './Statistics.styled';
-import { getRandomHexColor } from 'helpers/getRandomColors';
+import { StatisticsItem } from './Statistics.styled';
 
-export const Statistics = ({ title, stats }) => {
+export const Statistics = ({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) => {
   return (
-    <StatisticsWrap>
-      {title && <Title>{title}</Title>}
-
-      <StatList>
-        {stats.map(item => (
-          <StatItem key={item.id} color={getRandomHexColor()}>
-            <span>{item.label}</span>
-            <Percentage>{item.percentage}%</Percentage>
-          </StatItem>
-        ))}
-      </StatList>
-    </StatisticsWrap>
+    <ul>
+      <StatisticsItem>Good: {good}</StatisticsItem>
+      <StatisticsItem>Neutral: {neutral}</StatisticsItem>
+      <StatisticsItem>Bad: {bad}</StatisticsItem>
+      <StatisticsItem>Total: {total}</StatisticsItem>
+      <StatisticsItem>Positive feedback: {positivePercentage}%</StatisticsItem>
+    </ul>
   );
 };
