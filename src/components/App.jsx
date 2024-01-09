@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
@@ -13,9 +13,9 @@ export class App extends Component {
     bad: 0,
   };
 
-  onLeaveFeedback = e => {
+  onLeaveFeedback = option => {
     this.setState(prev => {
-      return { [e.target.textContent]: prev[e.target.textContent] + 1 };
+      return { [option]: prev[option] + 1 };
     });
   };
 
