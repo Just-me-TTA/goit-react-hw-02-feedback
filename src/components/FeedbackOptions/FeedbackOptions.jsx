@@ -1,5 +1,4 @@
 import React from 'react';
-import { nanoid } from 'nanoid';
 import { Button, ButtonList } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
