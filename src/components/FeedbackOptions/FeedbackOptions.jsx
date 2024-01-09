@@ -1,13 +1,12 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 import { Button, ButtonList } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  const uniqueKey = 'feedback-option'; 
-
   return (
     <ButtonList>
       {options.map(option => (
-        <li key={`${uniqueKey}-${option}`}>
+        <li key={option}>
           <Button type="button" aria-label={option} onClick={() => onLeaveFeedback(option)}>
             {option}
           </Button>
